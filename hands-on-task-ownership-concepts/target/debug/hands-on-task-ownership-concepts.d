@@ -1,0 +1,1 @@
+/Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/hands-on-task-ownership-concepts/target/debug/hands-on-task-ownership-concepts: /Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/hands-on-task-ownership-concepts/src/main.rs
