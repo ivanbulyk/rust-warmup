@@ -1,0 +1,1 @@
+/Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/simple-calculator-using-enums-and-pattern-matching/target/debug/simple-calculator-using-enums-and-pattern-matching: /Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/simple-calculator-using-enums-and-pattern-matching/src/main.rs
