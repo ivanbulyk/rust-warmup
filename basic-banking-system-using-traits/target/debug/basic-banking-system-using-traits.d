@@ -1,0 +1,1 @@
+/Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/basic-banking-system-using-traits/target/debug/basic-banking-system-using-traits: /Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/basic-banking-system-using-traits/src/main.rs
