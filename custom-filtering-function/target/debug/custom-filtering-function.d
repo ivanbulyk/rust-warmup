@@ -1,0 +1,1 @@
+/Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/custom-filtering-function/target/debug/custom-filtering-function: /Users/ivanbulyk/Rust/github.com/ivanbulyk/rust-warmup/custom-filtering-function/src/main.rs
