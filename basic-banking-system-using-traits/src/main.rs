@@ -1,8 +1,8 @@
 #![allow(unused)]
 
 trait Account {
-    fn deposit(&mut self, dep_amnt: f64);
-    fn withdraw(&mut self, wthdr_amnt: f64);
+    fn deposit(&mut self, dep_amnt: f64) -> Result<(), String>;
+    fn withdraw(&mut self, wthdr_amnt: f64) -> Result<(), String>;
     fn balance(&mut self) -> f64;
 }
 
@@ -13,14 +13,20 @@ struct BankAccount {
 }
 
 impl Account for BankAccount {
-    fn deposit(&mut self, dep_amnt: f64) {
-        self.balance += dep_amnt.abs()
-    }
-    fn withdraw(&mut self, wthdr_amnt: f64) {
-        if self.balance - wthdr_amnt.abs() < 0.0 {
-            println!("insufficient funds to complete withdraw operation");
+    fn deposit(&mut self, dep_amnt: f64) -> Result<(), String> {
+        if dep_amnt < 0.0 || dep_amnt == 0.0 {
+            Err("invalid input to complete deposit operation".to_string())
         } else {
-            self.balance -= wthdr_amnt.abs()
+            self.balance += dep_amnt;
+            Ok(())
+        }
+    }
+    fn withdraw(&mut self, wthdr_amnt: f64) -> Result<(), String> {
+        if self.balance - wthdr_amnt.abs() < 0.0 {
+            Err("insufficient funds to complete withdraw operation".to_string())
+        } else {
+            self.balance -= wthdr_amnt.abs();
+            Ok(())
         }
     }
     fn balance(&mut self) -> f64 {
@@ -40,8 +46,18 @@ fn main() {
         balance: 500.0,
     };
 
-    bank_account_alice.deposit(725.00);
-    bank_account_ben.withdraw(430.00);
+    let dep_res = bank_account_alice.deposit(725.00);
+    let with_res = bank_account_ben.withdraw(430.00);
+
+    match dep_res {
+        Ok(()) => (),
+        Err(err) => println!("{}", err),
+    }
+
+    match with_res {
+        Ok(()) => (),
+        Err(err) => println!("{}", err),
+    }
 
     let balance_alice = bank_account_alice.balance();
     let balance_ben = bank_account_ben.balance();
